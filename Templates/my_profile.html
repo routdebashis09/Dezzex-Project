@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dezzex Login</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="/static/js/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          background-color: #17a2b8;
+          height: 100vh;
+        }
+        #login .container #login-row #login-column #login-box {
+          margin-top: 30px;
+          max-width: 600px;
+          height: 500px;
+          padding: 20px;
+          border: 1px solid #9C9C9C;
+          background-color: #EAEAEA;
+        }
+        #login .container #login-row #login-column #login-box #login-form {
+          padding: 20px;
+        }
+        #login .container #login-row #login-column #login-box #login-form #register-link {
+          margin-top: -85px;
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h3 class="text-center text-white pt-5">Dezzex API</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <div class="span2" >
+                            <img src="/uploads/{{ data[6] }}" class="img-circle">
+                            <span><a href="/logout">Logout</a></span>
+                        </div>
+
+                        <div class="span8">
+                            <h3>Name: {{ data[1] }}</h3>
+                            <h6>Email: {{ data[2] }}</h6>
+                            <h6>Phone No: {{ data[4] }}</h6>
+                            <h6>Passport: {{ data[5] }}</h6>
+                        </div>
+
+                        <div class="span2">
+                            <div class="btn-group">
+                                <form action = "/my_profile" method = "post" enctype="multipart/form-data">
+                                    <input type="file" name="file" />
+                                    <input type="submit" value="Upload Profile Photo">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="/static/js/main.js"></script>
+</body>
+</html>
